@@ -1,0 +1,32 @@
+#include<stdio.h>
+void search(int arr[],int l,int r,int m)
+{
+    while (l <= r) {
+        int mid= l + (r - l) / 2;
+ 
+        if (arr[mid] == m)
+            printf("element found\n") ;
+ 
+        if (arr[mid] < m)
+            l = mid + 1;
+ 
+        else
+            r = mid - 1;
+    }
+}
+int main()
+{
+    int n,m;
+    printf("enter the number of element\n");
+    scanf("%d",&n);
+    printf("enter the numberin array\n");
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    printf("enter the number to search\n");
+    scanf("%d",&m);
+    search(arr,0,n,m);
+    return 0;
+}
